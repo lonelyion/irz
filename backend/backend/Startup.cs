@@ -26,6 +26,8 @@ namespace backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors();
+            services.AddLetsEncrypt();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +37,13 @@ namespace backend
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
+            });
 
             app.UseHttpsRedirection();
 

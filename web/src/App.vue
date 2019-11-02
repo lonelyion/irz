@@ -44,7 +44,7 @@
             color="indigo"
             app
     >
-      <span class="white--text">Made with <v-icon class="pink--text">mdi-heart</v-icon> by Copper</span>
+      <span class="white--text">Made with <v-icon class="pink--text">mdi-heart</v-icon> and 🌽 by Copper</span>
     </v-footer>
   </v-app>
 </template>

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +12,7 @@ namespace backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class AirConStatusController : ControllerBase
     {
         private const string dataFile = "./status.json";
@@ -32,6 +34,7 @@ namespace backend.Controllers
         [HttpGet]
         public AirConStatus Get()
         {
+            Console.WriteLine(string.Format("[0] Get AirConStatus"), DateTime.Now);
             return acStatus;
         }
 
@@ -46,6 +49,7 @@ namespace backend.Controllers
         [HttpPost]
         public SendResult Post(AirConStatus value)
         {
+            Console.WriteLine(string.Format("[0] Post AirConStatus"), DateTime.Now);
             SendResult r1 = SendResult.CheckStatus(value);
             if (r1.Code != 0)
             {
@@ -71,10 +75,12 @@ namespace backend.Controllers
                 stdOutput = proc.StandardOutput.ReadToEnd();
                 string errOutput = proc.StandardError.ReadToEnd();
                 proc.Close();
-                if (stdOutput.Contains("Runtime Error") || errOutput.Contains("Error") || errOutput.Contains("Wrong"))
+                if (stdOutput.Contains("Runtime Error") || stdOutput.Contains("failed") || errOutput.Contains("Error") || errOutput.Contains("Wrong"))
                 {
                     return new SendResult(1, errOutput);
                 }
+                //Console.WriteLine(stdOutput);
+                //Console.WriteLine("cerr: " + errOutput);
             }
             catch(Exception ex)
             {
