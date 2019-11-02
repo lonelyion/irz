@@ -1,0 +1,3 @@
+[submodule "irz/ir-slinger"]
+	path = irz/ir-slinger
+	url = https://github.com/bschwind/ir-slinger.git
