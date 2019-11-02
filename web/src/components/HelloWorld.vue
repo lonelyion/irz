@@ -70,6 +70,17 @@
   </v-container>
 </template>
 
+<script>
+  export default {
+      data: {
+          ac_status: []
+      },
+      created: function () {
+
+      }
+  }
+</script>
+
 <style scoped>
   .v-card {
     width: 419px;
