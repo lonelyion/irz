@@ -7,10 +7,10 @@
       <v-list dense>
         <v-list-item @click="">
           <v-list-item-action>
-            <v-icon>fa-link</v-icon>
+          <v-icon>fa-link</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>遥控器(WIP)</v-list-item-title>
+            <v-list-item-title>遥控器</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item @click="">
@@ -44,7 +44,7 @@
             color="indigo"
             app
     >
-      <span class="white--text">Made with <v-icon class="pink--text">mdi-heart</v-icon> and 🌽 by Copper</span>
+      <span class="white--text">Made with <span class="pink--text">♥</span> and 🌽 by Copper</span>
     </v-footer>
   </v-app>
 </template>
@@ -64,3 +64,9 @@
         }),
     }
 </script>
+
+<style>
+  .v-application {
+    font-family: 'Noto Sans SC', 'Roboto', 'Microsoft YaHei UI', sans-serif !important;
+  }
+</style>
