@@ -5,7 +5,7 @@ The aircon is an unknown type from Haier. May not be able to apply to your airco
 
 # Todo
 + <del>Send IR commands with program parameters.</del> done
-+ Add web interface to control remotely.(WIP)
++ <del>Add web interface to control remotely.</del>Almost done
 + Use temp&humidity sensor to get realtime information.
 
 # References
