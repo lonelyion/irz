@@ -34,7 +34,7 @@ namespace backend.Controllers
         [HttpGet]
         public AirConStatus Get()
         {
-            Console.WriteLine(string.Format("[0] Get AirConStatus"), DateTime.Now);
+            Console.WriteLine(string.Format("{0} Get AirConStatus",DateTime.Now));
             return acStatus;
         }
 
@@ -49,7 +49,7 @@ namespace backend.Controllers
         [HttpPost]
         public SendResult Post(AirConStatus value)
         {
-            Console.WriteLine(string.Format("[0] Post AirConStatus"), DateTime.Now);
+            Console.WriteLine(string.Format("{0} Post AirConStatus", DateTime.Now));
             SendResult r1 = SendResult.CheckStatus(value);
             if (r1.Code != 0)
             {
