@@ -41,7 +41,7 @@ jobs:
           git config user.email "copperion@outlook.com"
           git add --all .
           git commit -m "Deploy from GitHub: $GITHUB_SHA"
-          git push --force --quiet "https://CcoRMLeNqi:${CODING_TOKEN}@e.coding.net/copperion/irz_build.git" master:master
+          git push --force --quiet "https://CcoRMLeNqi:${{ secrets.CODING_TOKEN }}@e.coding.net/copperion/irz_build.git" master:master
 
 
       
