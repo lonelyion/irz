@@ -32,6 +32,16 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: website # The branch the action should deploy to.
           FOLDER: 'web/dist' # The folder the action should deploy.
+          
+      - name: Deploy to Coding.net branch
+        working-directory: web/dist
+        run: |
+          git init
+          git config user.name "GitHub Actions Bot"
+          git config user.email "copperion@outlook.com"
+          git add --all .
+          git commit -m Deploy from GitHub: $GITHUB_SHA
+          git push --force --quiet "https://CcoRMLeNqi:${CODING_TOKEN}@e.coding.net/copperion/irz_build.git" master:master
 
 
       
