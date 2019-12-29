@@ -1,4 +1,4 @@
-name: Yarn CI
+name: Build & Deploy
 
 on: 
   push:
@@ -14,31 +14,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
 
       - name: Run Yarn Install & Build
         working-directory: ./web
         run: |
           yarn install
           yarn run build
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v1
-        with:
-          name: site
-          path: web/dist
-
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download Artifacts
-        uses: actions/download-artifact@v1
-        with:
-          name: site
-
+      
       - name: Deploy to GitHub branch
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: website # The branch the action should deploy to.
-          FOLDER: 'site' # The folder the action should deploy.
+          FOLDER: 'web/dist' # The folder the action should deploy.
+
+
+      
