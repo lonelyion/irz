@@ -3,6 +3,10 @@ Control my dormitory's air conditioner with RaspberryPi and IR sender.
 
 The aircon is an unknown type from Haier. May not be able to apply to your aircon.
 
+For details on this project, please visit [this post on my blog](https://www.lonelyion.com/2019/control-aircon-with-web-and-raspberrypi/) (Chinese only).
+
+I will probably not update this project in the future.
+
 # Todo
 + <del>Send IR commands with program parameters.</del> done
 + <del>Add web interface to control remotely.</del>Almost done
