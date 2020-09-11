@@ -5,7 +5,7 @@ The aircon is an unknown type from Haier. May not be able to apply to your airco
 
 For details on this project, please visit [this post on my blog](https://www.lonelyion.com/2019/control-aircon-with-web-and-raspberrypi/) (Chinese only).
 
-I will probably not update this project in the future.
+I will probably not update this project in the future. Using smart IoT devices like [Xiaomi Mijia AC Controller](https://www.mi.com/ac-controller) is much better if you want to control your air conditioner remotely. This is just a practice project which leads me to learn full-stack development.
 
 # Todo
 + <del>Send IR commands with program parameters.</del> done
